@@ -20,14 +20,12 @@ exports.defaultConf = () => src("test.html")
 
 exports.complexConf = () => src("test.html")
 	.pipe(
-		picTrans(
-			[
-				{                                      type: "media/webp",  extension:    "webp"                                     },
-				{                                      type: "media/heic",  srcTransform: file => file + ".heic"                     },
-				{ if: img =>  img.src.match(/-xxx\./), media: ["1x", "2x"], srcTransform: file => file.replace(/-xxx\./, "-1and2x.") },
-				{ if: img => !img.src.match(/-xxx\./), media: ["1x", "2x"], srcTransform: file => file + ".something-else"           },
-			]
-		)
+		picTrans([
+			{                                      type: "media/webp",  extension:    "webp"                                     },
+			{                                      type: "media/heic",  srcTransform: file => file + ".heic"                     },
+			{ if: img =>  img.src.match(/-xxx\./), media: ["1x", "2x"], srcTransform: file => file.replace(/-xxx\./, "-1and2x.") },
+			{ if: img => !img.src.match(/-xxx\./), media: ["1x", "2x"], srcTransform: file => file + ".something-else"           },
+		])
 	)
 	.pipe(dest("complex"))
 ```
