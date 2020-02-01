@@ -1,0 +1,16 @@
+{
+  "name": "gulp-picture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp defaultConf complexConf && gulp testDefaultConf testComplexConf",
+    "clean": "rm -rf default complex"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-dom": "^1.0.0"
+  }
+}
