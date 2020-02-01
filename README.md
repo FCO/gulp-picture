@@ -9,7 +9,7 @@
 </body>
 ```
 
-##gulpfile.js
+## gulpfile.js
 ```javascript
 const { src, dest } = require("gulp");
 const picTrans      = require("./index.js")
